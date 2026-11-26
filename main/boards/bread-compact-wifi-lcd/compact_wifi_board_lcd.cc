@@ -59,6 +59,24 @@ static const gc9a01_lcd_init_cmd_t gc9107_lcd_init_cmds[] = {
  
 #define TAG "CompactWifiBoardLCD"
 
+static const st7789_lcd_init_cmd_t st7735_lcd_init_cmds[] = {
+    {0x01, (uint8_t[]){0x00}, 0, 150}, // Software reset
+    {0x11, (uint8_t[]){0x00}, 0, 150}, // Out of sleep mode
+    {0xB1, (uint8_t[]){0x01, 0x2C, 0x2D}, 3, 0}, // Framerate ctrl - normal mode
+    {0xB2, (uint8_t[]){0x01, 0x2C, 0x2D}, 3, 0}, // Framerate ctrl - idle mode
+    {0xB3, (uint8_t[]){0x01, 0x2C, 0x2D, 0x01, 0x2C, 0x2D}, 6, 0}, // Framerate ctrl - partial
+    {0xB4, (uint8_t[]){0x07}, 1, 0}, // Display inversion ctrl
+    {0xC0, (uint8_t[]){0xA2, 0x02, 0x84}, 3, 0}, // Power ctrl 1
+    {0xC1, (uint8_t[]){0xC5}, 1, 0}, // Power ctrl 2
+    {0xC2, (uint8_t[]){0x0A, 0x00}, 2, 0}, // Power ctrl 3
+    {0xC3, (uint8_t[]){0x8A, 0x2A}, 2, 0}, // Power ctrl 4
+    {0xC4, (uint8_t[]){0x8A, 0xEE}, 2, 0}, // Power ctrl 5
+    {0xC5, (uint8_t[]){0x0E}, 1, 0}, // Power ctrl
+    {0x36, (uint8_t[]){0xC0}, 1, 0}, // Memory access ctrl
+    {0x3A, (uint8_t[]){0x05}, 1, 0}, // 16-bit color mode
+    {0x29, (uint8_t[]){0x00}, 0, 100}, // Display on
+};
+
 class CompactWifiBoardLCD : public WifiBoard {
 private:
  
