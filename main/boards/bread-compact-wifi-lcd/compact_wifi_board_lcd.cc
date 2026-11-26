@@ -15,6 +15,7 @@
 #include <esp_lcd_panel_io.h>
 #include <esp_lcd_panel_ops.h>
 #include <driver/spi_common.h>
+#include "esp_lcd_st7735.h"
 
 #define TAG "CompactWifiBoardLCD"
 
