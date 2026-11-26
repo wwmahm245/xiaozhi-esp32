@@ -1,5 +1,6 @@
 ## IDF Component Manager Manifest File
 dependencies:
+  atanisoft/esp_lcd_st7735: "^1.0.0"
   espressif/ip101:
     version: ^1.1.0
     rules:
