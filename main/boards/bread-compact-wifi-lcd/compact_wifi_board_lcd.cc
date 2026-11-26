@@ -51,7 +51,7 @@ private:
         panel_config.reset_gpio_num = DISPLAY_RST_PIN;
         panel_config.rgb_ele_order = DISPLAY_RGB_ORDER;
         panel_config.bits_per_pixel = 16;
-        ESP_ERROR_CHECK(esp_lcd_new_panel_st7789(panel_io, &panel_config, &panel));
+        ESP_ERROR_CHECK(esp_lcd_new_panel_st7735(panel_io, &panel_config, &panel));
         
         esp_lcd_panel_reset(panel);
         esp_lcd_panel_init(panel);
